@@ -9,14 +9,14 @@ terraform {
 
 provider "azurerm" {
   features {}
-  subscription_id = "98473d5b-c639-404e-9bf2-91559fe65ff8"
+  subscription_id = "aapkeSubscriptionKiId"
 }
 
 terraform {
   backend "azurerm" {
-    resource_group_name  = "ritkarga"
-    storage_account_name = "ritkasaa"
-    container_name       = "ritkasca"
-    key                  = "website.tfstate"
+    resource_group_name  = "apkeResourceGroupKaNaam"
+    storage_account_name = "aapkeStorageAccountKaNaam"
+    container_name       = "apkeStorageContainerKaNaam"
+    key                  = "apkiStatefileKaNaam.tfstate"
   }
 }
