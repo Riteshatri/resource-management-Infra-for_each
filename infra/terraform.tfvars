@@ -1,6 +1,6 @@
 resource_groups = {
   rg1 = {
-    name     = "riteshkiWebsite"
+    name     = "PutRgNameHere"
     location = "North Europe"
   }
 }
@@ -8,10 +8,10 @@ resource_groups = {
 ######
 
 vnets = {
-  frontendvnet = {
-    vnet_name     = "frontendvnet"
+  vnetOne = {
+    vnet_name     = "vnetNameHere"
     location      = "North Europe"
-    rg_name       = "riteshkiWebsite"
+    rg_name       = "PutRgNameHere"
     address_space = ["10.0.0.0/23"] # 512 addresses
     subnets = {
       subnet1 = {
@@ -23,7 +23,7 @@ vnets = {
   backendvnet = {
     vnet_name     = "backendendvnet"
     location      = "North Europe"
-    rg_name       = "riteshkiWebsite"
+    rg_name       = "PutRgNameHere"
     address_space = ["10.0.0.0/23"] # 512 addresses
     subnets = {
       subnet2 = {
@@ -39,7 +39,7 @@ nsg = {
   frontend_nsg = {
     nsg_name = "frontendnsg"
     location = "North Europe"
-    rg_name  = "riteshkiWebsite"
+    rg_name  = "PutRgNameHere"
 
     security_rules = {
       allow_http = {
@@ -69,7 +69,7 @@ nsg = {
   backendend_nsg = {
     nsg_name = "backendnsg"
     location = "North Europe"
-    rg_name  = "riteshkiWebsite"
+    rg_name  = "PutRgNameHere"
 
     security_rules = {
       allow_http = {
@@ -103,9 +103,9 @@ nsg = {
 nics = {
   frontend_nic = {
     nic_name    = "frontendnic"
-    rg_name     = "riteshkiWebsite"
+    rg_name     = "PutRgNameHere"
     location    = "North Europe"
-    vnet_name   = "frontendvnet"
+    vnet_name   = "vnetNameHere"
     subnet_name = "frontendsubnet"
 
     ip_configurations = {
@@ -119,7 +119,7 @@ nics = {
 
   backend_nic = {
     nic_name    = "backendnic"
-    rg_name     = "riteshkiWebsite"
+    rg_name     = "PutRgNameHere"
     location    = "North Europe"
     vnet_name   = "backendendvnet"
     subnet_name = "backendsubnet"
@@ -141,12 +141,12 @@ pips = {
   frontend_pip = {
     pip_name = "frontendpip"
     location = "North Europe"
-    rg_name  = "riteshkiWebsite"
+    rg_name  = "PutRgNameHere"
   }
   backend_pip = {
     pip_name = "backendpip"
     location = "North Europe"
-    rg_name  = "riteshkiWebsite"
+    rg_name  = "PutRgNameHere"
   }
 }
 
@@ -156,12 +156,12 @@ nic_nsg_ids = {
   nic_nsg_1 = {
     nic_name = "frontendnic"
     nsg_name = "frontendnsg"
-    rg_name  = "riteshkiWebsite"
+    rg_name  = "PutRgNameHere"
   }
   nic_nsg_2 = {
     nic_name = "backendnic"
     nsg_name = "backendnsg"
-    rg_name  = "riteshkiWebsite"
+    rg_name  = "PutRgNameHere"
   }
 }
 
@@ -170,7 +170,7 @@ nic_nsg_ids = {
 vms = {
   frontend = {
     vm_name                      = "frontendvm"
-    rg_name                      = "riteshkiWebsite"
+    rg_name                      = "PutRgNameHere"
     location                     = "North Europe"
     vm_size                      = "Standard_D2s_v3"
     admin_username               = "ritesh"
@@ -194,7 +194,7 @@ vms = {
   }
   backend = {
     vm_name                      = "backendvm"
-    rg_name                      = "riteshkiWebsite"
+    rg_name                      = "PutRgNameHere"
     location                     = "North Europe"
     vm_size                      = "Standard_D2s_v3"
     admin_username               = "ritesh"
@@ -219,7 +219,7 @@ vms = {
 sql_servers = {
   ritserver = {
     sqlservername                 = "ritserver"
-    rg_name                       = "riteshkiWebsite"
+    rg_name                       = "PutRgNameHere"
     location                      = "North Europe"
     version                       = "12.0"
     server_login_username         = "ritserver"
@@ -249,7 +249,7 @@ sql_databases = {
   ritdb = {
     name           = "ritserver"
     server_name    = "ritserver"
-    resource_group = "riteshkiWebsite"
+    resource_group = "PutRgNameHere"
     sku_name       = "S1"
     max_size_gb    = 20
     zone_redundant = false
@@ -257,7 +257,7 @@ sql_databases = {
   # db2 = {
   #   name           = "analyticsdb"
   #   server_name    = "ritsqlserver112"
-  #   resource_group = "riteshkiWebsite"
+  #   resource_group = "PutRgNameHere"
   #   sku_name       = "S1"
   #   max_size_gb    = 20
   #   zone_redundant = false
